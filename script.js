@@ -1,15 +1,15 @@
-const test = React.createElement('h1', null, 'First time testing React!');
+//const test = React.createElement('h1', null, 'First time testing React!');
 const root = document.getElementById('root');
-ReactDOM.render(test, root);
+const test = <h1>First time testing React!</h1>;
 
+//Render một danh sách todo sử dụng ul, li React elements bao gồm các todo trong array sau:
 const list = [
     'Go to market',
     'Buy food',
     'Make dinner'
 ];
-//const listMap = list.map(x => '<li>' + x +'</li>');
-const listMap = list.map(x => React.createElement('li', null, x));
+const listMap = list.map(x => <li>{x}</li>);
 const toDo = document.getElementById('toDo');
-let toDoList = React.createElement('ul', null, listMap);
-ReactDOM.render(toDoList, toDo);
-//ReactDOM.render(<ul>{listMap}</ul>, toDo);
+let toDoList = <ul>{listMap}</ul>
+ReactDOM.render([test, toDoList], root);
+
